@@ -1,0 +1,78 @@
+if $ITERM_PROFILE == ''
+    let ITERM_PROFILE = 'Default'
+endif
+if $ITERM_PROFILE == 'Default'
+    " [ir_black]
+    set background=dark
+    colorscheme ir_black-256
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+    let g:indent_guides_auto_colors = 0
+elseif $ITERM_PROFILE == 'solar light'
+    " [solarized light]
+    set background=light
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=grey
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightgrey
+    colorscheme solarized
+    let g:solarized_termcolors=16
+    let g:indent_guides_auto_colors = 0
+elseif $ITERM_PROFILE == 'solar dark'
+    " [solarized dark]
+    set background=dark
+    colorscheme solarized
+    let g:solarized_termcolors=16
+    let g:indent_guides_auto_colors = 0
+endif
+
+
+" tmux will only forward escape sequences to the terminal if surrounded by a
+" DCS sequence
+" "
+" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
+"
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+let NERDTreeQuitOnOpen = 0
+let g:nerdtree_tabs_open_on_gui_startup=1
+let g:nerdtree_tabs_open_on_new_tab=1
+let NERDTreeMouseMode=1
+let NERDTreeIgnore = ['\.ropeproject$', '\.git$', '\.pyc$', '\.DS_Store$', '\.noseids']
+let NERDTreeShowLineNumbers=0
+
+let g:pymode_lint_cwindow = 0
+
+autocmd FileType python :setlocal foldmethod=indent
+autocmd FileType python :setlocal nospell
+autocmd FileType python :setlocal nowrap
+
+set noshowmode
+set mouse-=a
+set diffopt+=iwhite
+set diffexpr=""
+
+au BufEnter * call MyLastWindow()
+function! MyLastWindow()
+  " if the window is quickfix go on
+  if &buftype=="quickfix"
+    " if this window is last on screen quit without warning
+    if winbufnr(2) == -1
+      quit!
+    endif
+  endif
+endfunction
+
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
+nnoremap <C-h> 10h
+nnoremap <C-l> 10l
+inoremap jj <Esc>
+vnoremap gg :diffget //2<CR>
+vnoremap gG :diffget //3<CR>
+vnoremap gp :diffput<CR>
+set pastetoggle=<F10>

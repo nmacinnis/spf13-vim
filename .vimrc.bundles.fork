@@ -1,0 +1,27 @@
+let g:spf13_bundle_groups=['python', 'ruby', 'javascript']
+
+" [general]
+Bundle 'scrooloose/nerdtree'
+Bundle 'spf13/vim-colors'
+Bundle 'tpope/vim-surround'
+Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'tpope/vim-unimpaired'
+
+" [python]
+" UnBundle 'klen/python-mode'
+
+" [misc]
+Bundle 'Puppet-Syntax-Highlighting'
+
+" [erlang]
+Bundle 'jimenezrick/vimerl'
+
+" [color]
+Bundle 'msutherl/vim-colors-ir_black-256'
+Bundle 'altercation/vim-colors-solarized'
