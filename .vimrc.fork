@@ -80,3 +80,8 @@ vnoremap gG :diffget //3<CR>
 vnoremap gp :diffput<CR>
 set pastetoggle=<F10>
 nnoremap <leader><C-R> :so $MYVIMRC<CR>
+
+nnoremap ]c :call PythonDec("class", 1)<CR>
+nnoremap [c :call PythonDec("class", -1)<CR>
+nnoremap ]m :call PythonDec("function", 1)<CR>
+nnoremap [m :call PythonDec("function", -1)<CR>
