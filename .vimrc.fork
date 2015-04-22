@@ -46,7 +46,7 @@ let NERDTreeMouseMode=1
 let NERDTreeIgnore = ['\.ropeproject$', '\.git$', '\.pyc$', '\.DS_Store$', '\.noseids']
 let NERDTreeShowLineNumbers=0
 
-let g:pymode_lint_cwindow = 0
+" let g:pymode_lint_cwindow = 0
 let g:pymode_lint_checker = 'pyflakes,mccabe'
 
 let g:bufferline_echo = 0
