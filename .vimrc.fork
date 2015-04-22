@@ -54,6 +54,7 @@ let g:bufferline_echo = 0
 autocmd FileType python :setlocal foldmethod=indent
 autocmd FileType python :setlocal nospell
 autocmd FileType python :setlocal nowrap
+autocmd FileType yaml :setlocal foldmethod=indent
 
 set noshowmode
 set mouse-=a
