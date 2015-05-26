@@ -60,6 +60,7 @@ set noshowmode
 set mouse-=a
 " set diffopt+=iwhite
 set diffopt-=iwhite
+set diffopt+=vertical
 set diffexpr=""
 
 au BufEnter * call MyLastWindow()
