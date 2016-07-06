@@ -49,7 +49,9 @@ let NERDTreeShowLineNumbers=0
 " let g:pymode_lint_cwindow = 0
 let g:pymode_lint_checker = 'pyflakes,mccabe'
 
-let g:bufferline_echo = 0
+" let g:bufferline_echo = 0
+
+let g:airline_theme='dark'
 
 " autocmd FileType python :setlocal foldmethod=indent
 autocmd FileType python :setlocal nospell
