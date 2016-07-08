@@ -46,20 +46,21 @@ let NERDTreeQuitOnOpen = 0
 let g:nerdtree_tabs_open_on_gui_startup=1
 let g:nerdtree_tabs_open_on_new_tab=1
 let NERDTreeMouseMode=1
-let NERDTreeIgnore = ['\.ropeproject$', '\.git$', '\.pyc$', '\.DS_Store$', '\.noseids']
+let NERDTreeIgnore = ['\.ropeproject$', '\.git$', '\.pyc$', '\.DS_Store$', '\.noseids', '\.venv']
 let NERDTreeShowLineNumbers=0
 
 " let g:pymode_lint_cwindow = 0
 let g:pymode_lint_checker = 'pyflakes,mccabe'
 
-let g:bufferline_echo = 0
-
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " autocmd FileType python :setlocal foldmethod=indent
 autocmd FileType python :setlocal nospell
 autocmd FileType python :setlocal nowrap
 autocmd FileType yaml :setlocal foldmethod=indent
 
+set nospell
 set noshowmode
 set mouse-=a
 " set diffopt+=iwhite
