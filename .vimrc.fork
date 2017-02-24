@@ -49,8 +49,8 @@ let NERDTreeMouseMode=1
 let NERDTreeIgnore = ['\.ropeproject$', '\.git$', '\.pyc$', '\.DS_Store$', '\.noseids', '\.venv']
 let NERDTreeShowLineNumbers=0
 
-" let g:pymode_lint_cwindow = 0
-let g:pymode_lint_checker = 'pyflakes,mccabe'
+let g:syntastic_python_checkers = ['flake8', 'mccabe']
+let g:syntastic_python_flake8_args = '--ignore E501'
 
 let g:airline_mode_map = {
       \ '__' : '-',
@@ -75,13 +75,12 @@ let g:airline_symbols.maxlinenr = ''
 let g:airline_section_x = ''
 let g:airline_section_y = ''
 
-" autocmd FileType python :setlocal foldmethod=indent
 autocmd FileType python :setlocal nospell
 autocmd FileType python :setlocal nowrap
 autocmd FileType python :setlocal foldmethod=indent
 autocmd FileType yaml :setlocal foldmethod=indent
-let g:pymode_folding = 0
 
+set cursorline!
 set noshowmode
 set mouse-=a
 " set diffopt+=iwhite

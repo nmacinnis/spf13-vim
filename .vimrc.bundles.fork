@@ -7,7 +7,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
-Bundle 'myusuf3/numbers.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'jistr/vim-nerdtree-tabs'
 
@@ -23,3 +22,8 @@ Bundle 'jimenezrick/vimerl'
 
 " [color]
 Bundle 'msutherl/vim-colors-ir_black-256'
+
+" [python]
+Bundle 'yssource/python.vim'
+Bundle 'python_match.vim'
+Bundle 'pythoncomplete'
